@@ -1,10 +1,10 @@
 <template>
     <div class="mb-4">
-        <span>{{ option }}</span>        
+        <span>{{ option.value }}</span> <span class="badge badge-pill badge-info float-right">{{ option.votes }}</span>        
         <div class="progress">
             <div
-                :style="`width: ${percent}%`"
-                :aria-valuenow="percent"
+                :style="`width: ${option.percent}%`"
+                :aria-valuenow="option.percent"
                 class="progress-bar"
                 role="progressbar"
                 aria-valuemin="0"
@@ -18,8 +18,7 @@
     export default {
         name: 'ProgressBar',
         props: {
-            option: String,
-            percent: Number
+            option: Object
         }
     };
 </script>

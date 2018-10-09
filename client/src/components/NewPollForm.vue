@@ -71,9 +71,12 @@
                 this.isLoading = true;
 
                 // Grab our model data
-                // const { question, options } = this;
-
-                // TODO: Create the poll
+                const { question, options } = this;
+                const wsMessage = JSON.stringify({
+                    type: 'newPoll',
+                    payload: { question, options }
+                });
+                this.$socket.send(wsMessage);
             }
         }
     };

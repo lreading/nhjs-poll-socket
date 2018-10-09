@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-// TODO: Import Views here
+import Home from '@/views/Home.vue';
 import NewPoll from '@/views/NewPoll.vue';
 import Poll from '@/views/Poll.vue';
 import Recent from '@/views/Recent.vue';
@@ -13,7 +13,7 @@ export default new Router({
         {
             path: '/',
             name: 'home',
-            component: NewPoll
+            component: Home
         },
         {
             path: '/new',
