@@ -17,7 +17,7 @@ Vue.use(MomentVue);
 
 // Hook up the vue-native-socket with automagic reconnection
 // Individual pages will determine what to do with the messages
-Vue.use(VueNativeSocket, 'ws://nhjs-poll-socket:8082', {
+Vue.use(VueNativeSocket, 'ws://localhost:8082', {
     reconnection: true,
     reconnectionAttempts: 5,
     reconnectionDelay: 3000,

@@ -10,6 +10,10 @@ const tryParseMessage = (message) => {
     }
 };
 
+/**
+ * Handles an incoming websocket message
+ * @param {object} socketMessage
+ */
 const handleMessage = function (socketMessage) {
     const message = tryParseMessage(socketMessage);
     if (message === null) {

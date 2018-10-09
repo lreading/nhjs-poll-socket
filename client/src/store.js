@@ -2,6 +2,10 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import VuexPersist from 'vuex-persist';
 
+// Set up persistence.  This is how we will
+// prevent users from voting more than once
+// Do note that this is only suitable for a demo,
+// and this is easily bypassed.
 const persist = new VuexPersist({
     key: 'poll-socket',
     storage: localStorage
@@ -42,7 +46,6 @@ export default new Vuex.Store({
             return state.allPolls
                 .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
                 .slice(0, 10);
-
         },
         poll: (state) => (id) => {
             const matches = state.allPolls.filter(x => x.id === parseInt(id, 0));

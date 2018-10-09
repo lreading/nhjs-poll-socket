@@ -1,3 +1,12 @@
+/**
+ * @name poll
+ * @description logic for the poles
+ */
+
+/**
+ * The active polls
+ * @type {Array<object>}
+ */
 const activePolls = [];
 
 /**
@@ -22,22 +31,41 @@ const create = (question, options) => {
     return poll;
 };
 
+/**
+ * Gets a poll by its id
+ * @param {number} id
+ */
 const getPoll = (id) => {
     const polls = activePolls.filter(x => x.id === id);
     return polls.length ? polls[0] : null;
 };
 
+/**
+ * Gets an option from an existing poll by the option's id
+ * @param {object} poll
+ * @param {number} optionId
+ */
 const getOption = (poll, optionId) => {
     const options = poll.options.filter(x => x.id === optionId);
     return options.length ? options[0] : null;
 };
 
+/**
+ * Reclaculates the percentages for all of the options
+ * on a given poll
+ * @param {object} poll
+ */
 const recalc = (poll) => {
     poll.options.forEach((option) => {
         option.percent = (option.votes / poll.totalVotes) * 100;
     });
-}
+};
 
+/**
+ * Applies a vote for a given pole id / option id
+ * @param {number} pollId
+ * @param {number} optionId
+ */
 const vote = (pollId, optionId) => {
     const poll = getPoll(pollId);
     if (poll === null) {

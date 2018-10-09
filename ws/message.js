@@ -1,5 +1,11 @@
 /**
+ * @name message
+ * @description Helper methods for websocket messages
+ */
+
+/**
  * The types of messages we know how to send / handle
+ * @type {object}
  */
 const messageTypes = {
     info: 'info',
