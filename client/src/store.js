@@ -53,7 +53,6 @@ export default new Vuex.Store({
         },
         hasVoted: (state) => (pollId) => {
             return state.myVotes.filter(x => x.pollId === parseInt(pollId)).length !== 0;
-        },
-        myVotes: (state) => () => state.myVotes
+        }
     }
 });

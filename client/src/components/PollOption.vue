@@ -40,7 +40,7 @@
         },
         methods: {
             vote() {
-                const myVotes = this.$store.getters.myVotes();
+                const myVotes = this.$store.state.myVotes;
                 const vote = {
                     pollId: this.pollId,
                     optionId: this.option.id
