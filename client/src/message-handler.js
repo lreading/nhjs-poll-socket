@@ -27,6 +27,9 @@ const handleMessage = function (socketMessage) {
         case 'pollCreated':
             console.log('Poll created...');
             return this.$router.push({ name: 'poll', params: { id: message.payload.id } });
+        case 'info':
+            console.log(message);
+            return;
     }
 };
 
