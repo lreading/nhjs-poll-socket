@@ -46,7 +46,7 @@
                     optionId: this.option.id
                 };
                 myVotes.push(vote);
-                this.$store.dispatch('vote', myVotes);
+                this.$store.dispatch('myVotes', myVotes);
                 const wsMessage = JSON.stringify({ type: 'vote', payload: vote});
                 this.$socket.send(wsMessage);
             }
